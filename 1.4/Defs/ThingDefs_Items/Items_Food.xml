@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>DemorbidentorPack</defName>
+    <label>demorbidentor gemakon</label>
+    <description>Packaging of the demorbidentor in a specialized container that prevents spoilage. People with a certain gene can consume it to restore their internal strength reserves.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <selectable>true</selectable>
+    <stackLimit>10</stackLimit>
+    <tickerType>Rare</tickerType>
+    <possessionCount>5</possessionCount>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <pathCost>14</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+	  <tradeability>Buyable</tradeability>
+    <graphicData>
+      <texPath>Things/Item/Resource/DemorbidentorPack</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>0.01</DeteriorationRate>
+      <Mass>1</Mass>
+      <Flammability>0.5</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <Beauty>0</Beauty>
+      <MarketValue>15</MarketValue>
+	  <FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+	  <WorkToMake>4444</WorkToMake>
+    </statBases>
+	  <costList>
+		  <Neutroamine>1</Neutroamine>
+		  <MedicineHerbal>6</MedicineHerbal>
+		  <HemogenPack>2</HemogenPack>
+	  </costList>
+	  <recipeMaker>
+		  <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		  <workSkill>Intellectual</workSkill>
+		  <recipeUsers>
+			  <li>DrugLab</li>
+		  </recipeUsers>
+		  <researchPrerequisite>MedicineProduction</researchPrerequisite>
+		  <skillRequirements>
+			  <Crafting>4</Crafting>
+			  <Intellectual>4</Intellectual>
+		  </skillRequirements>
+		  <bulkRecipeCount>4</bulkRecipeCount>
+	  </recipeMaker>
+	  <thingCategories>
+      <li>Foods</li>
+    </thingCategories>
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <preferability>DesperateOnly</preferability>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <ingestSound>HemogenPack_Consume</ingestSound>
+      <outcomeDoers>
+        <li Class="Demorbidentor.IngestionOutcomeDoer_OffsetDemorbidentor"> <!--@@-->
+          <offset>0.25</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+</Defs>
