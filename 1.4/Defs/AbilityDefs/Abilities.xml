@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef Name="LongJumpDemorbidentor">
+		<defName>LongjumpDemorbidentor</defName>
+		<label>longjump</label>
+		<description>Jump to a distant location using super-strong hemogen-powered legs.</description>
+		<iconPath>UI/Abilities/LongLongjumpDemorbidentor</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+			<label>jump</label>
+			<violent>false</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<range>19.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+		<comps>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.02</demorbidentorCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef Abstract="True" Name="Demorbidentor_NoTargetAbilitiesDemorbidentor">
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+	
+	<AbilityDef ParentName="Demorbidentor_NoTargetAbilitiesDemorbidentor">
+		<defName>DemorbidentorSpeedDemorbidentor</defName>
+		<label>body power</label>
+		<description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</description>
+		<iconPath>UI/Icons/Genes/GoGoDemorbidentor</iconPath>
+		<cooldownTicksRange>100000</cooldownTicksRange>
+		<comps>
+			<li Class="Demorbidentor.CompProperties_AddHediff">
+				<hediffDef>GoGoDemorbidentor</hediffDef>
+			</li>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.3</demorbidentorCost>
+		</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="Demorbidentor_NoTargetAbilitiesDemorbidentor">
+		<defName>ImmunityDemorbidentor</defName>
+		<label>immunity power</label>
+		<description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</description>
+		<iconPath>UI/Icons/Genes/ImmunityDemorbidentor</iconPath>
+		<cooldownTicksRange>300000</cooldownTicksRange>
+		<comps>
+			<li Class="Demorbidentor.CompProperties_AddHediff">
+				<hediffDef>ImmunityDemorbidentor</hediffDef>
+			</li>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.5</demorbidentorCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="Demorbidentor_NoTargetAbilitiesDemorbidentor">
+		<defName>ArmoryttyDemorbidentor</defName>
+		<label>armor power</label>
+		<description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</description>
+		<iconPath>UI/Icons/Genes/ArmoryttyDemorbidentorA</iconPath>
+		<cooldownTicksRange>100000</cooldownTicksRange>
+		<comps>
+			<li Class="Demorbidentor.CompProperties_AddHediff">
+				<hediffDef>ArmoryttyDemorbidentor</hediffDef>
+			</li>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.3</demorbidentorCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="Demorbidentor_NoTargetAbilitiesDemorbidentor">
+		<defName>NoSleepDemorbidentor</defName>
+		<label>Insomnia</label>
+		<description>In an unforeseen situation, the body may refuse sleep, but for a certain time.</description>
+		<iconPath>UI/Icons/Genes/NoSleepDemorbidentor</iconPath>
+		<cooldownTicksRange>300000</cooldownTicksRange>
+		<comps>
+			<li Class="Demorbidentor.CompProperties_AddHediff">
+				<hediffDef>NoSleepDemorbidentor</hediffDef>
+			</li>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.3</demorbidentorCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+
+	
+	<AbilityDef Abstract="True" Name="Demorbidentor_TargetAbilitiesDemorbidentor">
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef >
+		<defName>DemorbidentorCrackSpine</defName>
+		<label>Punch</label>
+		<description>Crushing blow. It can not only break a person’s back, but also pierce through him.</description>
+		<iconPath>UI/Icons/Genes/DemorbidentorBane</iconPath>
+		<cooldownTicksRange>700</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>DemorbidentorSpineCrack</projectileDef>
+			</li>
+			<li Class="Demorbidentor.CompProperties_AbilityDemorbidentorCost">
+				<demorbidentorCost>0.15</demorbidentorCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>DemorbidentorSpineCrack</defName>
+		<label>crushing</label>
+		<graphicData>
+			<texPath>Things/Projectile/DemorbidentorSpineCrack</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Crush</damageDef>
+			<damageAmountBase>60</damageAmountBase>
+			<armorPenetrationBase>2</armorPenetrationBase>
+			<stoppingPower>10</stoppingPower>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
+	
+	
+</Defs>
