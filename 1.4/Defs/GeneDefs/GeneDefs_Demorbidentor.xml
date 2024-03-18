@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef>
+    <defName>Demorbidentor</defName>
+    <label>Demorbidentor</label>
+    <description>Combat genetic trait. Creates glands and vessels in the body that pass through the entire body to store and distribute a biologically active combat stimulant that will not have an effect on an ordinary person.</description>
+    <geneClass>Demorbidentor.Gene_Demorbidentor</geneClass>
+    <resourceGizmoType>Demorbidentor.GeneGizmo_ResourceDemorbidentor</resourceGizmoType>
+	<resourceLabel>demorbidentor</resourceLabel>
+	<resourceDescription>The biological reserve is restored by absorbing the demorbidentor gemakon, created in the drug laboratory.</resourceDescription>
+    <showGizmoOnWorldView>false</showGizmoOnWorldView>
+    <showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+    <iconPath>UI/Icons/Genes/Demorbidentor</iconPath>
+    <selectionWeight>0</selectionWeight>
+    <displayCategory>Hemogen</displayCategory>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <customEffectDescriptions>
+      <li>Allows the use of a demorbidentor</li>
+    </customEffectDescriptions>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>Demor</symbol></li>
+		  <li> <symbol>Bane</symbol></li>
+		  <li><symbol>Damnation</symbol></li>
+		  <li><symbol>Antonio</symbol></li>
+		  <li><symbol>Venomous</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+    <!--<minAgeActive>13</minAgeActive>-->
+	  	<abilities>
+			<li>DemorbidentorCrackSpine</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>DemorbidentorCrackSpine</AbilityDef>
+		</descriptionHyperlinks>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>0</biostatMet>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>DemorbidentorDrain</defName>
+    <label>Demorbidentor dehumidification</label>
+    <description>The body, over time, absorbs and eliminates the demorbident.</description>
+    <geneClass>Demorbidentor.Gene_DemorbidentorDrain</geneClass>
+    <iconPath>UI/Icons/Genes/DemorbidentorDrain</iconPath>
+    <prerequisite>Demorbidentor</prerequisite>
+    <resourceLossPerDay>0.1</resourceLossPerDay>
+    <displayCategory>Hemogen</displayCategory>
+    <displayOrderInCategory>-1</displayOrderInCategory>
+    <minAgeActive>13</minAgeActive>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>7</biostatMet>
+  </GeneDef>
+
+	<GeneDef>
+		<defName>LongjumpDemorbidentor</defName>
+		<label>demorbidentor jump</label>
+		<description>Strengthens demorbidentor vessels in the legs. Allow to jump on great distances.</description>
+		<iconPath>UI/Icons/Genes/LongLongjumpDemorbidentor</iconPath>
+		<prerequisite>Demorbidentor</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<abilities>
+			<li>LongjumpDemorbidentor</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>LongjumpDemorbidentor</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>GoGoDemorbidentor</defName>
+		<label>demorbidentor might</label>
+		<description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</description>
+		<iconPath>UI/Icons/Genes/GoGoDemorbidentor</iconPath>
+		<prerequisite>Demorbidentor</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<abilities>
+			<li>DemorbidentorSpeedDemorbidentor</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>DemorbidentorSpeedDemorbidentor</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-3</biostatMet>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>ImmunityDemorbidentorI</defName>
+		<label>demorbidentor immunity</label>
+		<description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</description>
+		<iconPath>UI/Icons/Genes/ImmunityDemorbidentor</iconPath>
+		<prerequisite>Demorbidentor</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<abilities>
+			<li>ImmunityDemorbidentor</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ImmunityDemorbidentor</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-2</biostatMet>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>ArmoryttyDemorbidentorA</defName>
+		<label>demorbidentor аrmor</label>
+		<description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</description>
+		<iconPath>UI/Icons/Genes/ArmoryttyDemorbidentorA</iconPath>
+		<prerequisite>Demorbidentor</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<abilities>
+			<li>ArmoryttyDemorbidentor</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ArmoryttyDemorbidentor</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-3</biostatMet>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>NoSleepDemorbidentorD</defName>
+		<label>demorbidentor insomnia</label>
+		<description>Sleepiness does not accumulate.</description>
+		<iconPath>UI/Icons/Genes/NoSleepDemorbidentor</iconPath>
+		<prerequisite>Demorbidentor</prerequisite>
+		<displayCategory>Hemogen</displayCategory>
+		<abilities>
+			<li>NoSleepDemorbidentor</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>NoSleepDemorbidentor</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+	</GeneDef>
+
+
+
+</Defs>
