@@ -1,0 +1,18 @@
+<LanguageData>
+
+	<FewDemorbidentor>У {0_labelShort} недостатньо деморбідентора</FewDemorbidentor>
+
+	<DemorbidentorGene>{0_labelShort} не має гена Деморбідентора</DemorbidentorGene>
+
+	<DemorbidentorCost>Вартість у деморбіденторі</DemorbidentorCost>
+
+	<Demorbidentor>Деморбідентор</Demorbidentor>
+
+	<DemorbidentorDesc>Бойова генетична особливість. Створює в тілі залози і судини, що проходять крізь все тіло, для зберігання та поширення біологічно активного бойового стимулятора, який не матиме впливу на звичайну людину.</DemorbidentorDesc>
+
+
+
+
+
+
+</LanguageData>
