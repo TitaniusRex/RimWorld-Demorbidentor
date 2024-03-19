@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<Demorbidentor.label>Demorbidentor</Demorbidentor.label>
+	<Demorbidentor.description>Combat genetic trait. Creates glands and vessels in the body that pass through the entire body to store and distribute a biologically active combat stimulant that will not have an effect on an ordinary person.</Demorbidentor.description>
+	<Demorbidentor.resourceDescription>The biological reserve is restored by absorbing the demorbidentor gemakon, created in the drug laboratory.</Demorbidentor.resourceDescription>
+	<Demorbidentor.resourceLabel>demorbidentor</Demorbidentor.resourceLabel>
+	<Demorbidentor.customEffectDescriptions.0>Allows the use of a demorbidentor.</Demorbidentor.customEffectDescriptions.0>
+	<Demorbidentor.symbolPack.prefixSymbols.0.symbol>Demor</Demorbidentor.symbolPack.prefixSymbols.0.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.1.symbol>Bane</Demorbidentor.symbolPack.prefixSymbols.1.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.2.symbol>Damnation</Demorbidentor.symbolPack.prefixSymbols.2.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.3.symbol>Antonio</Demorbidentor.symbolPack.prefixSymbols.3.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.4.symbol>Venomous</Demorbidentor.symbolPack.prefixSymbols.4.symbol>
+	
+	<DemorbidentorDrain.label>demorbidentor dehumidification</DemorbidentorDrain.label>
+	<DemorbidentorDrain.description>The body, over time, absorbs and eliminates the demorbident.</DemorbidentorDrain.description>
+
+	<LongjumpDemorbidentor.label>demorbidentor jump</LongjumpDemorbidentor.label>
+	<LongjumpDemorbidentor.description>Strengthens demorbidentor vessels in the legs. Allow to jump on great distances.</LongjumpDemorbidentor.description>
+
+	<GoGoDemorbidentor.label>demorbidentor might</GoGoDemorbidentor.label>
+	<GoGoDemorbidentor.description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</GoGoDemorbidentor.description>
+
+	<ImmunityDemorbidentorI.label>demorbidentor immunity</ImmunityDemorbidentorI.label>
+	<ImmunityDemorbidentorI.description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</ImmunityDemorbidentorI.description>
+
+
+	<ArmoryttyDemorbidentorA.label>demorbidentor аrmor</ArmoryttyDemorbidentorA.label>
+	<ArmoryttyDemorbidentorA.description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</ArmoryttyDemorbidentorA.description>
+
+
+	<NoSleepDemorbidentorD.label>demorbidentor insomnia</NoSleepDemorbidentorD.label>
+	<NoSleepDemorbidentorD.description>Sleepiness does not accumulate.</NoSleepDemorbidentorD.description>
+	
+
+
+</LanguageData>
