@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<LongjumpDemorbidentor.label>jump</LongjumpDemorbidentor.label>
+	<LongjumpDemorbidentor.description>Jump to a remote location using super strong legs.</LongjumpDemorbidentor.description>
+
+	<DemorbidentorSpeedDemorbidentor.label>body power</DemorbidentorSpeedDemorbidentor.label>
+	<DemorbidentorSpeedDemorbidentor.description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</DemorbidentorSpeedDemorbidentor.description>
+
+	<ImmunityDemorbidentor.label>immunity power</ImmunityDemorbidentor.label>
+	<ImmunityDemorbidentor.description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</ImmunityDemorbidentor.description>
+
+	<ArmoryttyDemorbidentor.label>armor power</ArmoryttyDemorbidentor.label>
+	<ArmoryttyDemorbidentor.description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</ArmoryttyDemorbidentor.description>
+
+	<NoSleepDemorbidentor.label>Insomnia</NoSleepDemorbidentor.label>
+	<NoSleepDemorbidentor.description>In an unforeseen situation, the body may refuse sleep, but for a certain time.</NoSleepDemorbidentor.description>
+
+	<DemorbidentorCrackSpine.label>Punch</DemorbidentorCrackSpine.label>
+	<DemorbidentorCrackSpine.description>Crushing blow. It can not only break a person’s back, but also pierce through him.</DemorbidentorCrackSpine.description>
+
+
+
+</LanguageData>
