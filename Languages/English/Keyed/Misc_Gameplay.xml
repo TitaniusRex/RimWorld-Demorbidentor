@@ -1,0 +1,18 @@
+<LanguageData>
+
+	<FewDemorbidentor>{0_labelShort} doesn't have enough demorbidentor</FewDemorbidentor>
+
+	<NoDemorbidentorGene>{0_labelShort} does not have Demorbidentor</NoDemorbidentorGene>
+
+	<DemorbidentorCost>cost in demorbidentor</DemorbidentorCost>
+
+	<Demorbidentor>Demorbidentor</Demorbidentor>
+
+	<DemorbidentorDesc>Combat genetic trait. Creates glands and vessels in the body that pass through the entire body to store and distribute a biologically active combat stimulant that will not have an effect on an ordinary person.</DemorbidentorDesc>
+
+
+
+
+
+
+</LanguageData>
