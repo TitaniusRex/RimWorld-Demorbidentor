@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<LongjumpDemorbidentor.label>стрибок</LongjumpDemorbidentor.label>
+	<LongjumpDemorbidentor.description>Стрибок у віддалене місце, використовуючи надсильні ноги.</LongjumpDemorbidentor.description>
+
+	<DemorbidentorSpeedDemorbidentor.label>сила тіла</DemorbidentorSpeedDemorbidentor.label>
+	<DemorbidentorSpeedDemorbidentor.description>Бойова здатність. Приводить організм у стан війни, типу Go-соку, але без нестачі.</DemorbidentorSpeedDemorbidentor.description>
+
+	<ImmunityDemorbidentor.label>сила імунітету</ImmunityDemorbidentor.label>
+	<ImmunityDemorbidentor.description>Піднімає температуру тіла та посилює вироблення клітин. Прискорює вироблення імунітету та загоєння ран.</ImmunityDemorbidentor.description>
+
+	<ArmoryttyDemorbidentor.label>сила броні</ArmoryttyDemorbidentor.label>
+	<ArmoryttyDemorbidentor.description>Бойова здатність. Плоть міцніє, мускулатура напружується. Шкіра набуває щільності та пружності, броня може зламатися, але тіло вічне. Напруга м'язів запобігає крововтраті якщо така була.</ArmoryttyDemorbidentor.description>
+
+	<NoSleepDemorbidentor.label>безсоння</NoSleepDemorbidentor.label>
+	<NoSleepDemorbidentor.description>За непередбаченої ситуації організм може відмовитися від сну, але на певний час.</NoSleepDemorbidentor.description>
+
+	<DemorbidentorCrackSpine.label>руйнування</DemorbidentorCrackSpine.label>
+	<DemorbidentorCrackSpine.description>Знищуючий удар. Може не просто зламати спину людини, а й пробити наскрізь.</DemorbidentorCrackSpine.description>
+
+
+
+</LanguageData>
