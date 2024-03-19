@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<Demorbidentor.label>Деморбідентор</Demorbidentor.label>
+	<Demorbidentor.description>Бойова генетична особливість. Створює в тілі залози і судини, що проходять крізь все тіло, для зберігання та поширення біологічно активного бойового стимулятора, який не матиме впливу на звичайну людину.</Demorbidentor.description>
+	<Demorbidentor.resourceLabel>деморбідентор</Demorbidentor.resourceLabel>
+	<Demorbidentor.resourceDescription>Запас біоенергії відновлюється шляхом поглинання гемакону деморбідента, створеного в хімічній лабораторії.</Demorbidentor.resourceDescription>
+	<Demorbidentor.customEffectDescriptions.0>Дозволяє використовувати деморбідентор.</Demorbidentor.customEffectDescriptions.0>
+	<Demorbidentor.symbolPack.prefixSymbols.0.symbol>Демор</Demorbidentor.symbolPack.prefixSymbols.0.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.1.symbol>Бейн</Demorbidentor.symbolPack.prefixSymbols.1.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.2.symbol>Прокляття</Demorbidentor.symbolPack.prefixSymbols.2.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.3.symbol>Антонио</Demorbidentor.symbolPack.prefixSymbols.3.symbol>
+	<Demorbidentor.symbolPack.prefixSymbols.4.symbol>Отруйний</Demorbidentor.symbolPack.prefixSymbols.4.symbol>
+
+	<DemorbidentorDrain.label>деморбідентор – осушення</DemorbidentorDrain.label>
+	<DemorbidentorDrain.description>Організм згодом поглинає та виводить деморбідентор.</DemorbidentorDrain.description>
+
+	<LongjumpDemorbidentor.label>стрибок деморбідентора</LongjumpDemorbidentor.label>
+	<LongjumpDemorbidentor.description>Підсилює судини деморбідента в ногах. Дозволяють стрибати на великі відстані.</LongjumpDemorbidentor.description>
+
+	<GoGoDemorbidentor.label>міць деморбідентора</GoGoDemorbidentor.label>
+	<GoGoDemorbidentor.description>Бойова здатність. Приводить організм у стан війни, типу Go-соку, але без нестачі.</GoGoDemorbidentor.description>
+
+	<ImmunityDemorbidentorI.label>імунітет деморбідентора</ImmunityDemorbidentorI.label>
+	<ImmunityDemorbidentorI.description>Піднімає температуру тіла та посилює вироблення клітин. Прискорює вироблення імунітету та загоєння ран.</ImmunityDemorbidentorI.description>
+
+
+	<ArmoryttyDemorbidentorA.label>броня деморбідентора</ArmoryttyDemorbidentorA.label>
+	<ArmoryttyDemorbidentorA.description>Бойова здатність. Плоть міцніє, мускулатура напружується. Шкіра набуває щільності та пружності, броня може зламатися, але тіло вічне. Напруга м'язів запобігає крововтраті якщо така була.</ArmoryttyDemorbidentorA.description>
+
+
+	<NoSleepDemorbidentorD.label>безсоння деморбідентора</NoSleepDemorbidentorD.label>
+	<NoSleepDemorbidentorD.description>Сонливість не накопичується.</NoSleepDemorbidentorD.description>
+	
+
+
+</LanguageData>
