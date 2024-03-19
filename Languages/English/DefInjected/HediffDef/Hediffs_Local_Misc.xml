@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<ImmunityDemorbidentor.label>immunity</ImmunityDemorbidentor.label>
+	<ImmunityDemorbidentor.description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</ImmunityDemorbidentor.description>
+
+	<ArmoryttyDemorbidentor.label>armor</ArmoryttyDemorbidentor.label>
+	<ArmoryttyDemorbidentor.description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</ArmoryttyDemorbidentor.description>
+
+	<GoGoDemorbidentor.label>might</GoGoDemorbidentor.label>
+	<GoGoDemorbidentor.description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</GoGoDemorbidentor.description>
+
+	<NoSleepDemorbidentor.label>insomnia</NoSleepDemorbidentor.label>
+	<NoSleepDemorbidentor.description>sleepiness does not accumulate.</NoSleepDemorbidentor.description>
+
+	<DemorbidentorCraving.label>Demorbidentor desiccation</DemorbidentorCraving.label>
+	<DemorbidentorCraving.description>Demorbidentor has ended. I feel...incomplete.</DemorbidentorCraving.description>
+
+</LanguageData>
