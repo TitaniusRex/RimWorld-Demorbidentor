@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<ImmunityDemorbidentor.label>імунітет</ImmunityDemorbidentor.label>
+	<ImmunityDemorbidentor.description>Піднімає температуру тіла та посилює вироблення клітин. Прискорює вироблення імунітету та загоєння ран.</ImmunityDemorbidentor.description>
+
+	<ArmoryttyDemorbidentor.label>броня</ArmoryttyDemorbidentor.label>
+	<ArmoryttyDemorbidentor.description>Бойова здатність. Плоть міцніє, мускулатура напружується. Шкіра набуває щільності та пружності, броня може зламатися, але тіло вічне. Напруга м'язів запобігає крововтраті якщо така була.</ArmoryttyDemorbidentor.description>
+
+	<GoGoDemorbidentor.label>міць</GoGoDemorbidentor.label>
+	<GoGoDemorbidentor.description>Бойова здатність. Приводить організм у стан війни, по типу Go-соку, але без нестачі.</GoGoDemorbidentor.description>
+
+	<NoSleepDemorbidentor.label>інсомнія</NoSleepDemorbidentor.label>
+	<NoSleepDemorbidentor.description>Сонливість не накопичується.</NoSleepDemorbidentor.description>
+
+	<DemorbidentorCraving.label>деморбідентор - висушення</DemorbidentorCraving.label>
+	<DemorbidentorCraving.description>Деморбідентор закінчився. Я почуваюся... неповноцінно.</DemorbidentorCraving.description>
+
+
+</LanguageData>
