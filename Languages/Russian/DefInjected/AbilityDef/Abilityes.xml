@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+
+	<LongjumpDemorbidentor.label>прыжок</LongjumpDemorbidentor.label>
+	<LongjumpDemorbidentor.description>Прыжок в отдаленное место, используя сверхсильные ноги.</LongjumpDemorbidentor.description>
+
+	<DemorbidentorSpeedDemorbidentor.label>сила тела</DemorbidentorSpeedDemorbidentor.label>
+	<DemorbidentorSpeedDemorbidentor.description>Боевая способность. Приводит организм в состояние войны на подобии Go-сока, но без недостатка.</DemorbidentorSpeedDemorbidentor.description>
+
+	<ImmunityDemorbidentor.label>сила иммунитета</ImmunityDemorbidentor.label>
+	<ImmunityDemorbidentor.description>Поднимает температуру тела и усиливает выработку клеток. Ускоряет выработку иммунитета и заживление ран.</ImmunityDemorbidentor.description>
+
+	<ArmoryttyDemorbidentor.label>сила брони</ArmoryttyDemorbidentor.label>
+	<ArmoryttyDemorbidentor.description>Боевая способность. Плоть крепчает, мускулатура напрягаеться. Кожа приобретает плотность и упругость, броня может сломаться, но тело вечно. Напряжение мышц предотвращает кровопотерю если такова была.</ArmoryttyDemorbidentor.description>
+
+	<NoSleepDemorbidentor.label>бессонница</NoSleepDemorbidentor.label>
+	<NoSleepDemorbidentor.description>При непредвиденной ситуации организм может отказаться от сна, но на определённое время.</NoSleepDemorbidentor.description>
+
+	<DemorbidentorCrackSpine.label>крушение</DemorbidentorCrackSpine.label>
+	<DemorbidentorCrackSpine.description>Сокрушающий удар. Может не просто сломать человеку спину, но и пробить насквозь.</DemorbidentorCrackSpine.description>
+
+
+
+</LanguageData>
