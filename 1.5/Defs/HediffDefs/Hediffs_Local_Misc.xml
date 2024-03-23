@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<HediffDef ParentName="DiseaseBase">
+		<defName>ImmunityDemorbidentor</defName>
+		<label>immunity</label>
+		<description>Raises body temperature and enhances cell production. Accelerates the development of immunity and wound healing.</description>
+		<isBad>false</isBad>
+		<defaultLabelColor>(0.1,1,0.1)</defaultLabelColor>
+		<stages>
+			<li>
+				<naturalHealingFactor>3</naturalHealingFactor>
+				<statOffsets>
+					<ImmunityGainSpeed>3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>33000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="DiseaseBase">
+		<defName>ArmoryttyDemorbidentor</defName>
+		<label>armor</label>
+		<description>Combat ability. The flesh becomes stronger, the muscles tense. The skin becomes dense and elastic, the armor may break, but the body is eternal. Muscle tension prevents blood loss if there was any.</description>
+		<isBad>false</isBad>
+		<defaultLabelColor>(0.1,1,0.1)</defaultLabelColor>
+		<stages>
+			<li>
+				<totalBleedFactor>0.1</totalBleedFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>2</ArmorRating_Sharp>
+					<ArmorRating_Blunt>2</ArmorRating_Blunt>
+					<ArmorRating_Heat>1</ArmorRating_Heat>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>33000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>GoGoDemorbidentor</defName>
+		<hediffClass>Hediff_High</hediffClass>
+		<label>might</label>
+		<description>Combat ability. Puts the body into a state of war, similar to Go-juice, but without the downside.</description>
+		<defaultLabelColor>(0.1,1,0.1)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<painFactor>0.5</painFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.55</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2.0</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>33000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>NoSleepDemorbidentor</defName>
+		<hediffClass>Hediff_High</hediffClass>
+		<label>insomnia</label>
+		<description>Sleepiness does not accumulate.</description>
+		<defaultLabelColor>(0.1,1,0.1)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-1</RestFallRateFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>60000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+	<HediffDef>
+		<defName>DemorbidentorCraving</defName>
+		<label>Demorbidentor desiccation</label>
+		<description>Demorbidentor has ended. I feel...incomplete.</description>
+		<hediffClass>Demorbidentor.Hediff_DemorbidentorCraving</hediffClass>
+		<defaultLabelColor>(0.1, 0.5, 0.3)</defaultLabelColor>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.9</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="Demorbidentor.HediffCompProperties_SeverityFromDemorbidentor">
+				<severityPerHourEmpty>0.05</severityPerHourEmpty>
+				<severityPerHourDemorbidentor>-0.1</severityPerHourDemorbidentor>
+		</li>
+		</comps>
+	</HediffDef>
+
+
+</Defs>
