@@ -454,7 +454,19 @@ namespace Demorbidentor
 		}
 	}
 
+	[DefOf]
+	public static class ThingDefOf
+	{
+		public static ThingDef DemorbidentorPack;
+	}
 
+	[DefOf]
+	public static class GeneDefOf
+	{
+		[MayRequireBiotech]
+		public static GeneDef Demorbidentor;
+
+	}
 
 	
 }
