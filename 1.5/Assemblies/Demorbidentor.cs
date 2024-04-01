@@ -358,5 +358,103 @@ namespace Demorbidentor
 		}
 	}
  
+	public class JobGiver_GetDemorbidentor : ThinkNode_JobGiver
+	{
+		private static float? cachedDemorbidentorPackDemorbidentorGain;
+
+		public static float DemorbidentorPackDemorbidentorGain
+		{
+			get
+			{
+				if (!cachedDemorbidentorPackDemorbidentorGain.HasValue)
+				{
+					if (!ModsConfig.BiotechActive)
+					{
+						cachedDemorbidentorPackDemorbidentorGain = 0f;
+					}
+					else if (!(ThingDefOf.DemorbidentorPack.ingestible?.outcomeDoers?.FirstOrDefault((IngestionOutcomeDoer x) => x is IngestionOutcomeDoer_OffsetDemorbidentor) is IngestionOutcomeDoer_OffsetDemorbidentor ingestionOutcomeDoer_OffsetDemorbidentor))
+					{
+						cachedDemorbidentorPackDemorbidentorGain = 0f;
+					}
+					else
+					{
+						cachedDemorbidentorPackDemorbidentorGain = ingestionOutcomeDoer_OffsetDemorbidentor.offset;
+					}
+				}
+				return cachedDemorbidentorPackDemorbidentorGain.Value;
+			}
+		}
+
+		public static void ResetStaticData()
+		{
+			cachedDemorbidentorPackDemorbidentorGain = null;
+		}
+
+		public override float GetPriority(Pawn pawn)
+		{
+			if (!ModsConfig.BiotechActive)
+			{
+				return 0f;
+			}
+			if (pawn.genes?.GetFirstGeneOfType<Gene_Demorbidentor>() == null)
+			{
+				return 0f;
+			}
+			return 9.1f;
+		}
+
+		protected override Job TryGiveJob(Pawn pawn)
+		{
+			if (!ModsConfig.BiotechActive)
+			{
+				return null;
+			}
+			Gene_Demorbidentor gene_Demorbidentor = pawn.genes?.GetFirstGeneOfType<Gene_Demorbidentor>();
+			if (gene_Demorbidentor == null)
+			{
+				return null;
+			}
+			if (!gene_Demorbidentor.ShouldConsumeDemorbidentorNow())
+			{
+				return null;
+			}
+			if (gene_Demorbidentor.demorbidentorPacksAllowed)
+			{
+				int num = Mathf.FloorToInt((gene_Demorbidentor.Max - gene_Demorbidentor.Value) / DemorbidentorPackDemorbidentorGain);
+				if (num > 0)
+				{
+					Thing demorbidentorPack = GetDemorbidentorPack(pawn);
+					if (demorbidentorPack != null)
+					{
+						Job job = JobMaker.MakeJob(JobDefOf.Ingest, demorbidentorPack);
+						job.count = Mathf.Min(demorbidentorPack.stackCount, num);
+						job.ingestTotalCount = true;
+						return job;
+					}
+				}
+			}
+			return null;
+		}
+
+		private Thing GetDemorbidentorPack(Pawn pawn)
+		{
+			Thing carriedThing = pawn.carryTracker.CarriedThing;
+			if (carriedThing != null && carriedThing.def == ThingDefOf.DemorbidentorPack)
+			{
+				return carriedThing;
+			}
+			for (int i = 0; i < pawn.inventory.innerContainer.Count; i++)
+			{
+				if (pawn.inventory.innerContainer[i].def == ThingDefOf.DemorbidentorPack)
+				{
+					return pawn.inventory.innerContainer[i];
+				}
+			}
+			return GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.listerThings.ThingsOfDef(ThingDefOf.DemorbidentorPack), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, (Thing t) => pawn.CanReserve(t) && !t.IsForbidden(pawn));
+		}
+	}
+
+
+
 	
 }
