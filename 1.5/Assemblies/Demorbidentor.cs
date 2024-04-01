@@ -145,6 +145,44 @@ namespace Demorbidentor
 
 	}
 
+	[StaticConstructorOnStartup]
+	public static class GeneUtility
+	{
+		public static void OffsetDemorbidentor(Pawn pawn, float offset, bool applyStatFactor = true)
+		{
+			if (!ModsConfig.BiotechActive)
+			{
+				return;
+			}
+			if (offset > 0f && applyStatFactor)
+			{
+				offset *= pawn.GetStatValue(StatDefOf.DemorbidentorGainFactor);
+			}
+			Gene_DemorbidentorDrain gene_DemorbidentorDrain = pawn.genes?.GetFirstGeneOfType<Gene_DemorbidentorDrain>();
+			if (gene_DemorbidentorDrain != null)
+			{
+				GeneResourceDrainDemorbidentorUtility.OffsetResource(gene_DemorbidentorDrain, offset);
+				return;
+			}
+			Gene_Demorbidentor gene_Demorbidentor = pawn.genes?.GetFirstGeneOfType<Gene_Demorbidentor>();
+			if (gene_Demorbidentor != null)
+			{
+				gene_Demorbidentor.Value += offset;
+			}
+		}
+	}
+
+
+	[DefOf]
+	public static class StatDefOf
+	{
+		[MayRequireBiotech]
+		public static StatDef HemogenGainFactor;
+		public static StatDef MedicalPotency;
+		public static StatDef DemorbidentorGainFactor;
+		public static StatDef Nutrition;
+	}
+
 	
   
 }
