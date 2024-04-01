@@ -236,6 +236,77 @@ namespace Demorbidentor
 		}
 	}
 
-	
+	[StaticConstructorOnStartup]
+	public class GeneGizmo_ResourceDemorbidentor : GeneGizmo_Resource
+	{
+		private static readonly Texture2D DemorbidentorCostTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.78f, 0.72f, 0.66f));
+
+		private const float TotalPulsateTime = 0.85f;
+
+		private List<Pair<IGeneResourceDrain, float>> tmpDrainGenes = new List<Pair<IGeneResourceDrain, float>>();
+
+		public GeneGizmo_ResourceDemorbidentor(Gene_Resource gene, List<IGeneResourceDrain> drainGenes, Color barColor, Color barhighlightColor)
+			: base(gene, drainGenes, barColor, barhighlightColor)
+		{
+		}
+
+		public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
+		{
+			GizmoResult result = base.GizmoOnGUI(topLeft, maxWidth, parms);
+			float num = Mathf.Repeat(Time.time, 0.85f);
+			float num2 = 1f;
+			if (num < 0.1f)
+			{
+				num2 = num / 0.1f;
+			}
+			else if (num >= 0.25f)
+			{
+				num2 = 1f - (num - 0.25f) / 0.6f;
+			}
+			if (((MainTabWindow_Inspect)MainButtonDefOf.Inspect.TabWindow)?.LastMouseoverGizmo is Command_Ability command_Ability && gene.Max != 0f)
+			{
+				foreach (CompAbilityEffect effectComp in command_Ability.Ability.EffectComps)
+				{
+					if (effectComp is CompAbilityEffect_DemorbidentorCost compAbilityEffect_DemorbidentorCost && compAbilityEffect_DemorbidentorCost.Props.demorbidentorCost > float.Epsilon)
+					{
+						Rect rect = barRect.ContractedBy(3f);
+						float width = rect.width;
+						float num3 = gene.Value / gene.Max;
+						rect.xMax = rect.xMin + width * num3;
+						float num4 = Mathf.Min(compAbilityEffect_DemorbidentorCost.Props.demorbidentorCost / gene.Max, 1f);
+						rect.xMin = Mathf.Max(rect.xMin, rect.xMax - width * num4);
+						GenUI.DrawTextureWithMaterial(rect, DemorbidentorCostTex, null);
+						return result;
+					}
+				}
+				return result;
+			}
+			return result;
+		}
+		protected override void DrawHeader(Rect headerRect, ref bool mouseOverElement)
+		{
+			Gene_Demorbidentor demorbidentorGene;
+			if (IsDraggable && (demorbidentorGene = gene as Gene_Demorbidentor) != null)
+			{
+				headerRect.xMax -= 24f;
+				Rect rect = new Rect(headerRect.xMax, headerRect.y, 24f, 24f);
+				Widgets.DefIcon(rect, ThingDefOf.DemorbidentorPack);
+				if (Widgets.ButtonInvisible(rect))
+				{
+					demorbidentorGene.demorbidentorPacksAllowed = !demorbidentorGene.demorbidentorPacksAllowed;
+					if (demorbidentorGene.demorbidentorPacksAllowed)
+					{
+						SoundDefOf.Tick_High.PlayOneShotOnCamera();
+					}
+					else
+					{
+						SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+					}
+				}
+			}
+			base.DrawHeader(headerRect, ref mouseOverElement);
+		}
+
+  
   
 }
