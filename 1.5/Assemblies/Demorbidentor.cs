@@ -183,6 +183,59 @@ namespace Demorbidentor
 		public static StatDef Nutrition;
 	}
 
+	public class Gene_DemorbidentorDrain : Gene, IGeneResourceDrain
+	{
+		[Unsaved(false)]
+		private Gene_Demorbidentor cachedDemorbidentorGene;
+
+		private const float MinAgeForDrain = 13f;
+
+		public Gene_Resource Resource
+		{
+			get
+			{
+				if (cachedDemorbidentorGene == null || !cachedDemorbidentorGene.Active)
+				{
+					cachedDemorbidentorGene = pawn.genes.GetFirstGeneOfType<Gene_Demorbidentor>();
+				}
+				return cachedDemorbidentorGene;
+			}
+		}
+
+
+		public bool CanOffset
+		{
+			get
+			{
+				if (Active)
+				{
+					return !pawn.Deathresting;
+				}
+				return false;
+			}
+		}
+
+		public float ResourceLossPerDay => def.resourceLossPerDay;
+
+		public Pawn Pawn => pawn;
+
+		public string DisplayLabel => Label + " (" + "Gene".Translate() + ")";
+
+		public override void Tick()
+		{
+			base.Tick();
+			GeneResourceDrainDemorbidentorUtility.TickResourceDrain(this);
+		}
+
+		public override IEnumerable<Gizmo> GetGizmos()
+		{
+			foreach (Gizmo resourceDrainGizmo in GeneResourceDrainDemorbidentorUtility.GetResourceDrainGizmos(this))
+			{
+				yield return resourceDrainGizmo;
+			}
+		}
+	}
+
 	
   
 }
