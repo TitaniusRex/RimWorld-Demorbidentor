@@ -44,5 +44,107 @@ namespace Demorbidentor
 			return false;
 		}
 	}
+
+	public class CompProperties_AbilityDemorbidentorCost : CompProperties_AbilityEffect
+	{
+		public float demorbidentorCost;
+
+		public CompProperties_AbilityDemorbidentorCost()
+		{
+			compClass = typeof(CompAbilityEffect_DemorbidentorCost);
+		}
+
+		public override IEnumerable<string> ExtraStatSummary()
+		{
+			yield return (string)("DemorbidentorCost".Translate() + ": ") + Mathf.RoundToInt(demorbidentorCost * 99f);/*100*/
+		}
+	}
+
+	public class Gene_Demorbidentor : Gene_Resource, IGeneResourceDrain
+	{
+		public bool demorbidentorPacksAllowed = true;
+
+		public Gene_Resource Resource => this;
+
+		public Pawn Pawn => pawn;
+
+		public bool CanOffset
+		{
+			get
+			{
+				if (Active)
+				{
+					return !pawn.Deathresting;
+				}
+				return false;
+			}
+		}
+
+		public string DisplayLabel => Label + " (" + "Gene".Translate() + ")";
+
+		public float ResourceLossPerDay => def.resourceLossPerDay;
+
+		public override float InitialResourceMax => 3f;
+
+		public override float MinLevelForAlert => 0.15f;
+
+		public override float MaxLevelOffset => 0.1f;
+
+		protected override Color BarColor => new ColorInt(3, 138, 3).ToColor;
+
+		protected override Color BarHighlightColor => new ColorInt(45, 142, 42).ToColor;
+
+		public override void PostAdd()
+		{
+			if (ModLister.CheckBiotech("Demorbidentor"))
+			{
+				base.PostAdd();
+				Reset();
+			}
+		}
+
+		public override void Notify_IngestedThing(Thing thing, int numTaken)
+		{
+			if (thing.def.IsMeat)
+			{
+				IngestibleProperties ingestible = thing.def.ingestible;
+				if (ingestible != null && ingestible.sourceDef?.race?.Humanlike == true)
+				{
+					GeneUtility.OffsetDemorbidentor(pawn, 0.0375f * thing.GetStatValue(StatDefOf.Nutrition) *  (float)numTaken);
+				}
+			}
+		}
+
+		public override void Tick()
+		{
+			base.Tick();
+			GeneResourceDrainDemorbidentorUtility.TickResourceDrain(this);
+		}
+
+		public override void SetTargetValuePct(float val)
+		{
+			targetValue = Mathf.Clamp(val * Max, 0f, Max - MaxLevelOffset);
+		}
+
+		public bool ShouldConsumeDemorbidentorNow()
+		{
+			return Value < targetValue;
+		}
+
+		public override IEnumerable<Gizmo> GetGizmos()
+		{
+			foreach (Gizmo gizmo in base.GetGizmos())
+			{
+				yield return gizmo;
+			}
+			foreach (Gizmo resourceDrainGizmo in GeneResourceDrainDemorbidentorUtility.GetResourceDrainGizmos(this))
+			{
+				yield return resourceDrainGizmo;
+			}
+		}
+
+	}
+
+	
   
 }
