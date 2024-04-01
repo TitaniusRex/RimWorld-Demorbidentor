@@ -307,6 +307,38 @@ namespace Demorbidentor
 			base.DrawHeader(headerRect, ref mouseOverElement);
 		}
 
-  
+  		protected override string GetTooltip()
+		{
+			tmpDrainGenes.Clear();
+			string text = $"{gene.ResourceLabel.CapitalizeFirst().Colorize(ColoredText.TipSectionTitleColor)}: {gene.ValueForDisplay} / {gene.MaxForDisplay}\n";
+			
+			if (!drainGenes.NullOrEmpty())
+			{
+				float num = 0f;
+				foreach (IGeneResourceDrain drainGene in drainGenes)
+				{
+					if (drainGene.CanOffset)
+					{
+						tmpDrainGenes.Add(new Pair<IGeneResourceDrain, float>(drainGene, drainGene.ResourceLossPerDay));
+						num += drainGene.ResourceLossPerDay;
+					}
+				}
+				if (num != 0f)
+				{
+					string text2 = ((num < 0f) ? "RegenerationRate".Translate() : "DrainRate".Translate());
+					text = text + "\n\n" + text2 + ": " + "PerDay".Translate(Mathf.Abs(gene.PostProcessValue(num))).Resolve();
+					foreach (Pair<IGeneResourceDrain, float> tmpDrainGene in tmpDrainGenes)
+					{
+						text = text + "\n  - " + tmpDrainGene.First.DisplayLabel.CapitalizeFirst() + ": " + "PerDay".Translate(gene.PostProcessValue(0f - tmpDrainGene.Second).ToStringWithSign()).Resolve();
+					}
+				}
+			}
+			if (!gene.def.resourceDescription.NullOrEmpty())
+			{
+				text = text + "\n\n" + gene.def.resourceDescription.Formatted(gene.pawn.Named("PAWN")).Resolve();
+			}
+			return text;
+		}
+	}
   
 }
