@@ -468,5 +468,58 @@ namespace Demorbidentor
 
 	}
 
+	public static class GeneResourceDrainDemorbidentorUtility
+	{
+		public static void TickResourceDrain(IGeneResourceDrain drain)
+		{
+			if (drain.CanOffset && drain.Resource != null)
+			{
+				OffsetResource(drain, (0f - drain.ResourceLossPerDay) / 60000f);
+			}
+		}
+
+		public static void PostResourceOffset(IGeneResourceDrain drain, float oldValue)
+		{
+			if (oldValue > 0f && drain.Resource.Value <= 0f)
+			{
+				Pawn pawn = drain.Pawn;
+				if (!pawn.health.hediffSet.HasHediff(HediffDefOf.DemorbidentorCraving))
+				{
+					pawn.health.AddHediff(HediffDefOf.DemorbidentorCraving);
+				}
+			}
+		}
+
+		public static void OffsetResource(IGeneResourceDrain drain, float amnt)
+		{
+			float value = drain.Resource.Value;
+			drain.Resource.Value += amnt;
+			PostResourceOffset(drain, value);
+		}
+
+		public static IEnumerable<Gizmo> GetResourceDrainGizmos(IGeneResourceDrain drain)
+		{
+			if (DebugSettings.ShowDevGizmos && drain.Resource != null)
+			{
+				Gene_Resource resource = drain.Resource;
+				Command_Action command_Action = new Command_Action();
+				command_Action.defaultLabel = "" + resource.ResourceLabel + " -20";
+				command_Action.action = delegate
+				{
+					OffsetResource(drain, -0.1f);
+				};
+				yield return command_Action;
+				Command_Action command_Action2 = new Command_Action();
+				command_Action2.defaultLabel = "" + resource.ResourceLabel + " +20";
+				command_Action2.action = delegate
+				{
+					OffsetResource(drain, 0.1f);
+				};
+				yield return command_Action2;
+			}
+		}
+	}
+
+	
 	
 }
