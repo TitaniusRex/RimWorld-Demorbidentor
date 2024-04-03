@@ -566,6 +566,20 @@ namespace Demorbidentor
 		}
 	}
 
+        public class Hediff_DemorbidentorCraving : HediffWithComps
+	{
+		public override string SeverityLabel
+		{
+			get
+			{
+				if (Severity == 0f)
+				{
+					return null;
+				}
+				return Severity.ToStringPercent();
+			}
+		}
+	}
 	
 	
 }
