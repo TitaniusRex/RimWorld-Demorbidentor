@@ -607,5 +607,18 @@ namespace Demorbidentor
 			}
 		}
 	}
- 
+
+	public class CompProperties_AddHediff : CompProperties_AbilityEffect
+	{
+		public HediffDef hediffDef;
+
+		public bool applyToCaster = true;
+
+		public bool applyToRadius = false;
+
+		public CompProperties_AddHediff()
+		{
+			compClass = typeof(CompAddHediff);
+		}
+	}
 }
