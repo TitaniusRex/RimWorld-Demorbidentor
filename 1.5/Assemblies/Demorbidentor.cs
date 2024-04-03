@@ -520,6 +520,27 @@ namespace Demorbidentor
 		}
 	}
 
+	[DefOf]
+	public static class HediffDefOf
+    {
+		public static HediffDef DemorbidentorCraving;
+	}
+
+	public class HediffCompProperties_SeverityFromDemorbidentor : HediffCompProperties
+	{
+		public float severityPerHourEmpty;
+
+		public float severityPerHourDemorbidentor;
+
+		public HediffCompProperties_SeverityFromDemorbidentor()
+		{
+			compClass = typeof(HediffComp_SeverityFromDemorbidentor);
+		}
+	}
+
+
+
+
 	
 	
 }
