@@ -10,7 +10,7 @@ using Verse.AI;
 namespace Demorbidentor
 {
 
-  public class CompAbilityEffect_DemorbidentorCost : CompAbilityEffect
+  	public class CompAbilityEffect_DemorbidentorCost : CompAbilityEffect
 	{
 		public new CompProperties_AbilityDemorbidentorCost Props => (CompProperties_AbilityDemorbidentorCost)props;
 		
@@ -583,42 +583,22 @@ namespace Demorbidentor
 	
 	//++++++++++++++++
 
-	internal class CompAddHediff : CompAbilityEffect
-	{
+	internal class CompAddHediff : CompAbilityEffect{
 		public new CompProperties_AddHediff Props => (CompProperties_AddHediff)props;
-
 		public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
-		{
-			base.Apply(target, dest);
+		{base.Apply(target, dest);
 			if (Props.applyToCaster)
-			{
-				parent.pawn.health.AddHediff(Props.hediffDef);
-			}
+			{parent.pawn.health.AddHediff(Props.hediffDef);}
 			if (!Props.applyToRadius)
-			{
-				return;
-			}
+			{return;}
 			foreach (Pawn item in parent.pawn.Map.mapPawns.AllPawnsSpawned)
-			{
-				if (item.Spawned && item.Position.InHorDistOf(target.Cell, parent.def.EffectRadius))
-				{
-					item.health.AddHediff(Props.hediffDef);
-				}
-			}
-		}
-	}
+			{if (item.Spawned && item.Position.InHorDistOf(target.Cell, parent.def.EffectRadius))
+			{item.health.AddHediff(Props.hediffDef);}}}}
 
-	public class CompProperties_AddHediff : CompProperties_AbilityEffect
-	{
+	public class CompProperties_AddHediff : CompProperties_AbilityEffect{
 		public HediffDef hediffDef;
-
 		public bool applyToCaster = true;
-
 		public bool applyToRadius = false;
-
 		public CompProperties_AddHediff()
-		{
-			compClass = typeof(CompAddHediff);
-		}
-	}
+		{compClass = typeof(CompAddHediff);}}
 }
