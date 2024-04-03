@@ -539,7 +539,32 @@ namespace Demorbidentor
 	}
 
 
+        public class HediffComp_SeverityFromDemorbidentor : HediffComp
+	{
+		private Gene_Demorbidentor cachedDemorbidentorGene;
 
+		public HediffCompProperties_SeverityFromDemorbidentor Props => (HediffCompProperties_SeverityFromDemorbidentor)props;
+
+		public override bool CompShouldRemove => base.Pawn.genes?.GetFirstGeneOfType<Gene_Demorbidentor>() == null;
+
+		private Gene_Demorbidentor Demorbidentor
+		{
+			get
+			{
+				if (cachedDemorbidentorGene == null)
+				{
+					cachedDemorbidentorGene = base.Pawn.genes.GetFirstGeneOfType<Gene_Demorbidentor>();
+				}
+				return cachedDemorbidentorGene;
+			}
+		}
+
+		public override void CompPostTick(ref float severityAdjustment)
+		{
+			base.CompPostTick(ref severityAdjustment);
+			severityAdjustment += ((Demorbidentor.Value > 0f) ? Props.severityPerHourDemorbidentor : Props.severityPerHourEmpty) / 2500f;
+		}
+	}
 
 	
 	
