@@ -344,9 +344,9 @@ namespace Demorbidentor
 	public class IngestionOutcomeDoer_OffsetDemorbidentor : IngestionOutcomeDoer
 	{
 		public float offset;
-		protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
+		protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested)
 		{
-			GeneUtility.OffsetDemorbidentor(pawn, offset * (float)ingestedCount);
+			GeneUtility.OffsetDemorbidentor(pawn, offset * (float)ingested.stackCount);
 		}
 		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(ThingDef parentDef)
 		{
