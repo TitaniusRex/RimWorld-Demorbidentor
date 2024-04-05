@@ -283,13 +283,13 @@ namespace Demorbidentor
 			}
 			return result;
 		}
-		protected override void DrawHeader(Rect headerRect, ref bool mouseOverElement)
+		protected override void DrawLabel(Rect labelRect, ref bool mouseOverAnyHighlightableElement)
 		{
 			Gene_Demorbidentor demorbidentorGene;
-			if (IsDraggable && (demorbidentorGene = gene as Gene_Demorbidentor) != null)
+			if ((gene.pawn.IsColonistPlayerControlled || gene.pawn.IsPrisonerOfColony) && (demorbidentorGene = gene as Gene_Demorbidentor) != null)
 			{
-				headerRect.xMax -= 24f;
-				Rect rect = new Rect(headerRect.xMax, headerRect.y, 24f, 24f);
+				labelRect.xMax -= 24f;
+				Rect rect = new Rect(labelRect.xMax, labelRect.y, 24f, 24f);
 				Widgets.DefIcon(rect, ThingDefOf.DemorbidentorPack);
 				if (Widgets.ButtonInvisible(rect))
 				{
@@ -304,7 +304,7 @@ namespace Demorbidentor
 					}
 				}
 			}
-			base.DrawHeader(headerRect, ref mouseOverElement);
+			base.DrawLabel(labelRect, ref mouseOverAnyHighlightableElement);
 		}
 
   		protected override string GetTooltip()
